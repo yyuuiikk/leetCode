@@ -8,7 +8,7 @@ class Solution {
      */
     function numberOfSteps($num) {
         $count = 0;
-        while ($num > 1) {
+        while ($num > 0) {
             if ($num % 2 === 0) {
                 $num = intdiv($num, 2);
             } else {
@@ -16,6 +16,6 @@ class Solution {
             }
             $count++;
         }
-        return ++$count;
+        return $count;
     }
 }
