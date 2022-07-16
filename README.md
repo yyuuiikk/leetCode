@@ -1,1 +1,1 @@
-# leetCode
+LeetCode練習用
