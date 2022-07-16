@@ -7,21 +7,16 @@ class Solution {
      * @return String[]
      */
     function fizzBuzz($n) {
-        $result = [];
-        for ($i=1; $i <= $n; $i++) {
-            if ($i % 15 === 0) {
-                $result[] = 'FizzBuzz';
-            } elseif ($i % 5 === 0) {
-                $result[] = 'Buzz';
-            } elseif ($i % 3 === 0) {
-                $result[] = 'Fizz';
+        return array_map(function ($value) {
+            if ($value % 15 === 0) {
+                return 'FizzBuzz';
+            } elseif ($value % 5 === 0) {
+                return 'Buzz';
+            } elseif ($value % 3 === 0) {
+                return 'Fizz';
             } else {
-                $result[] = (string)$i;
+                return (string)$value;
             }
-        }
-        return $result;
+        }, range(1, $n));
     }
 }
-
-$sol = new Solution();
-print_r($sol->fizzBuzz(20));
