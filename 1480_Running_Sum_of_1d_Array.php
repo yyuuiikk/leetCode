@@ -7,14 +7,9 @@ class Solution {
      * @return Integer[]
      */
     function runningSum($nums) {
-        $result = [];
-        for ($i = 0; $i < count($nums); $i++) {
-            if ($result !== []) {
-                $result[] = $result[$i-1] + $nums[$i];
-            } else {
-                $result[] = $nums[$i];
-            }
+        for ($i = 1; $i < count($nums); $i++) {
+            $nums[$i] += $nums[$i-1];
         }
-        return $result;
+        return $nums;
     }
 }
