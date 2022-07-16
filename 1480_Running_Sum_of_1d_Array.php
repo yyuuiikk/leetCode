@@ -9,13 +9,12 @@ class Solution {
     function runningSum($nums) {
         $result = [];
         for ($i = 0; $i < count($nums); $i++) {
-            $sum = 0;
-            for ($j = 0; $j < $i+1; $j++) {
-                $sum += $nums[$j];
+            if ($result !== []) {
+                $result[] = $result[$i-1] + $nums[$i];
+            } else {
+                $result[] = $nums[$i];
             }
-            $result[] = $sum;
         }
         return $result;
     }
 }
-
